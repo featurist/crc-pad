@@ -1,0 +1,5 @@
+$(function() {
+  
+  window.turnIntoPad($(".container"));
+  
+});

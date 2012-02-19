@@ -1,0 +1,155 @@
+.selected {
+  z-index: 999999;
+}
+
+.selected > .ui-resizable-se {
+  background-color:#ccc;
+}
+
+html, body {
+  background-color: #efefef;
+}
+
+* {
+  font-family: Sans-serif;
+}
+
+.container {
+  position: relative;
+}
+
+.pad {
+  border-radius: 2px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width:360px;
+  height:200px;
+  left: 30px;
+  top: 30px;
+  position: absolute;
+  min-width: 200px;
+  min-height: 48px;
+  background-color: #ffffff;
+  box-shadow: 7px 7px 2px #ccc;
+}
+.pad.selected {
+  border: 1px solid #333;
+}
+.pad .edit {
+  display: none;
+}
+.pad.selected .edit {
+  display: block;
+}
+.pad .show {
+  display: block;
+}
+.pad.selected .show {
+  display: none;
+}
+
+.pad .destroy {
+  float: right;
+  text-decoration: none;
+  display: none;
+}
+.selected .destroy {
+  display: block;
+}
+
+.plus {
+  left: 10px;
+  top: 10px;
+  font-size: 1.3em;
+  text-decoration: none;
+  display: block;
+}
+
+.create-node {
+  padding: 10px;
+  border: 1px solid #ccc;
+  position: absolute;
+  top: 30px;
+  z-index: 999999999;
+  width: 150px;
+  background-color: #ffffff;
+}
+
+.menu-item {
+  padding: 10px;
+  padding-left: 0;
+  display: block;
+}
+
+.crc-card h1, .crc-card .title-input {
+  padding: 0;
+  margin: 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+  display: block;
+  width: 270px;
+  height: 44px;
+  line-height: 44px;
+  color: #333;
+  margin-bottom: 10px;
+}
+.crc-card .title-input {
+  border-color: #ccc;
+}
+
+.crc-card .responsibilities {
+  width: 48%;
+  float: left;
+}
+.crc-card .collaborators {
+  width: 48%;
+  float: right;
+}
+.crc-card .collaborators select {
+  display: block;
+}
+
+.crc-card p, .crc-card input, .crc-card select {
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  font-weight: normal;
+  border: 1px solid #ffffff;
+  display: block;
+  width: 100%;
+  height: 25px;
+  margin-bottom: 3px;
+}
+.crc-card input, .crc-card select {
+  border-color: #ccc;
+}
+
+
+.ui-resizable {
+  position: relative;
+}
+.ui-resizable-handle {
+  display: block;
+  font-size: 0.1px;
+  position: absolute;
+}
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+.ui-resizable-se {
+  bottom: 1px;
+  cursor: se-resize;
+  height: 12px;
+  right: 1px;
+  width: 12px;
+}
+.ui-resizable-handle {
+  opacity:0.5;
+}
+.ui-resizable-se {
+  bottom:0;
+  right:0;
+  width:48px;
+  height:48px;
+}
