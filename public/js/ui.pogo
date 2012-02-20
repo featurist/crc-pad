@@ -58,8 +58,6 @@ update options with @id to @value =
     true
 
 update @view when @fields change =
-  @fields : click
-    false
 
   @fields : filter "select" : change
     field = $(this) : data "field"

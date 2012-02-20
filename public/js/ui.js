@@ -18,9 +18,6 @@
         });
     };
     updateWhenChange = function(view, fields) {
-        fields.click(function() {
-            return false;
-        });
         fields.filter("select").change(function() {
             var field, value;
             field = $(this).data("field");
