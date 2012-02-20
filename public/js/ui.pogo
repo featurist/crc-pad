@@ -6,6 +6,7 @@ crc card markup = "
       <h1 data-field='title'></h1>
 
       <div class='responsibilities'>
+        <h2>Responsibilities</h2>
         <p data-field='responsibility-0'></p>
         <p data-field='responsibility-1'></p>
         <p data-field='responsibility-2'></p>
@@ -14,12 +15,15 @@ crc card markup = "
       </div>
 
       <div class='collaborators'>
+        <h2>Collaborators</h2>
         <p data-field='collaborator-0'></p>
         <p data-field='collaborator-1'></p>
         <p data-field='collaborator-2'></p>
         <p data-field='collaborator-3'></p>
         <p data-field='collaborator-4'></p>
       </div>
+      
+      <a href='/edit' class='edit-button'>edit</a>
     </div>
 
     <div class='edit'>
@@ -42,6 +46,8 @@ crc card markup = "
         <select data-field='collaborator-3'><option></option></select>
         <select data-field='collaborator-4'><option></option></select>
       </div>
+      
+      <a href='/view' class='view-button'>done</a>
     </div>
   </div>
   "
@@ -97,12 +103,18 @@ make @element into crc card =
   update @element when @fields change
   @fields : filter "select" : html ($ "select:first" : html!)
   $ "select" : append "<option value='@id'></option>"
+  
+  make @element selectable
+  
   @element
 
 make @pad selectable =
-  @pad: toggle class 'selected'
-  @pad : click
-    // $(this) : toggle class "selected"
+  pad: find '.edit-button': click
+    pad: add class 'selected'
+    false
+  
+  pad: find '.view-button': click
+    pad: remove class 'selected'
     false
 
 destroy @element if sure =
@@ -123,7 +135,6 @@ add a pad element to @element =
   activate @pad
 
 activate @pad =
-  make @pad selectable
   make @pad destroyable
   @pad : draggable!
 

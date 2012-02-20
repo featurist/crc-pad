@@ -90,6 +90,15 @@ html, body {
   display: inline-block;
 }
 
+.crc-card .collaborators {
+  margin-left: 35px;
+}
+
+.crc-card .edit-button, .crc-card .view-button {
+  display: block;
+  text-align: right;
+}
+
 .crc-card .collaborators select {
   display: block;
 }
