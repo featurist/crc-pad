@@ -21,14 +21,13 @@ html, body {
 .pad {
   border-radius: 2px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #aaa;
   left: 90px;
   top: 90px;
   position: absolute;
-  min-width: 200px;
-  min-height: 48px;
+  height: 270px;
   background-color: #ffffff;
-  box-shadow: 7px 7px 2px #ccc;
+  box-shadow: 7px 7px 2px #ddd;
 }
 .pad.selected {
   border: 1px solid #333;
@@ -63,10 +62,12 @@ html, body {
   background-color: #ddd;
   color: #ffffff;
   width: 70px;
+  height: 70px;
   border-radius: 5px;
   text-align: center;
   text-decoration: none;
   display: block;
+  line-height: 1em;
 }
 
 .crc-card h1, .crc-card .title-input {
@@ -76,27 +77,53 @@ html, body {
   font-weight: bold;
   border: 1px solid #ffffff;
   display: block;
-  width: 270px;
   height: 44px;
   line-height: 44px;
   color: #333;
   margin-bottom: 10px;
 }
+.crc-card select, .crc-card input, .crc-card h2 {
+  width: 260px;
+}
+.crc-card .title-input {
+  width: 300px;
+}
+
+.crc-card h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: normal;
+  color: #cccccc;
+}
+
 .crc-card .title-input {
   border-color: #ccc;
 }
 
-.crc-card .responsibilities, .crc-card .collaborators {
-  display: inline-block;
+.responsibilities, .collaborators {
+  width: 270px;
 }
 
-.crc-card .collaborators {
-  margin-left: 35px;
+.crc-card .responsibilities, .crc-card .collaborators {
+  float: left;
 }
 
 .crc-card .edit-button, .crc-card .view-button {
-  display: block;
-  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  background-color: #dddddd;
+  color: #ffffff;
+  border-radius: 5px;
+  width: 70px;
+  height: 20px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 .crc-card .collaborators select {
@@ -110,7 +137,6 @@ html, body {
   font-weight: normal;
   border: 1px solid #ffffff;
   display: block;
-  width: 100%;
   height: 25px;
   margin-bottom: 3px;
 }
