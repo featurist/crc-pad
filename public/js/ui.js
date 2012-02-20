@@ -2,7 +2,7 @@
     var self, exports, crcCardMarkup, padMarkup, plusMarkup, updateInTo, updateOptionsWithTo, updateWhenChange, ids, makeIntoCrcCard, makeSelectable, destroyIfSure, makeDestroyable, addAPadElementTo, activate, addAPlusButtonTo;
     self = this;
     exports = exports || this;
-    crcCardMarkup = "\n  <div class='crc-card'>\n    <div class='show'>\n      <h1 data-field='title'></h1>\n\n      <div class='responsibilities'>\n        <p data-field='responsibility-0'></p>\n        <p data-field='responsibility-1'></p>\n        <p data-field='responsibility-2'></p>\n        <p data-field='responsibility-3'></p>\n        <p data-field='responsibility-4'></p>\n      </div>\n\n      <div class='collaborators'>\n        <p data-field='collaborator-0'></p>\n        <p data-field='collaborator-1'></p>\n        <p data-field='collaborator-2'></p>\n        <p data-field='collaborator-3'></p>\n        <p data-field='collaborator-4'></p>\n      </div>\n    </div>\n\n    <div class='edit'>\n      <input type='text' data-field='title' value='' class='title-input'></input>\n\n      <div class='responsibilities'>\n        <input type='text' data-field='responsibility-0' value=''></input>\n        <input type='text' data-field='responsibility-1' value=''></input>\n        <input type='text' data-field='responsibility-2' value=''></input>\n        <input type='text' data-field='responsibility-3' value=''></input>\n        <input type='text' data-field='responsibility-4' value=''></input>\n      </div>\n\n      <div class='collaborators'>\n        <select data-field='collaborator-0'><option></option></select>\n        <select data-field='collaborator-1'><option></option></select>\n        <select data-field='collaborator-2'><option></option></select>\n        <select data-field='collaborator-3'><option></option></select>\n        <select data-field='collaborator-4'><option></option></select>\n      </div>\n    </div>\n  </div>\n  ";
+    crcCardMarkup = "\n  <div class='crc-card'>\n    <div class='show'>\n      <h1 data-field='title'></h1>\n\n      <div class='responsibilities'>\n        <p data-field='responsibility-0'></p>\n        <p data-field='responsibility-1'></p>\n        <p data-field='responsibility-2'></p>\n        <p data-field='responsibility-3'></p>\n        <p data-field='responsibility-4'></p>\n      </div>\n\n      <div class='collaborators'>\n        <p data-field='collaborator-0'></p>\n        <p data-field='collaborator-1'></p>\n        <p data-field='collaborator-2'></p>\n        <p data-field='collaborator-3'></p>\n        <p data-field='collaborator-4'></p>\n      </div>\n    </div>\n\n    <div class='edit'>\n      <input type='text' data-field='title' value='' class='title-input' placeholder='class name'></input>\n\n      <div class='responsibilities'>\n        <h2>Responsibilities</h2>\n        <input type='text' data-field='responsibility-0' value=''></input>\n        <input type='text' data-field='responsibility-1' value=''></input>\n        <input type='text' data-field='responsibility-2' value=''></input>\n        <input type='text' data-field='responsibility-3' value=''></input>\n        <input type='text' data-field='responsibility-4' value=''></input>\n      </div>\n\n      <div class='collaborators'>\n        <h2>Collaborators</h2>\n        <select data-field='collaborator-0'><option></option></select>\n        <select data-field='collaborator-1'><option></option></select>\n        <select data-field='collaborator-2'><option></option></select>\n        <select data-field='collaborator-3'><option></option></select>\n        <select data-field='collaborator-4'><option></option></select>\n      </div>\n    </div>\n  </div>\n  ";
     padMarkup = "<div class='pad'><a class='destroy' href='#destroy'>X</a></div>";
     plusMarkup = "<a class='plus' href='#plus'>+</a>";
     updateInTo = function(field, view, value) {
@@ -64,8 +64,8 @@
         return element;
     };
     makeSelectable = function(pad) {
+        pad.toggleClass("selected");
         return pad.click(function() {
-            $(this).toggleClass("selected");
             return false;
         });
     };
@@ -110,4 +110,4 @@
         self = this;
         return addAPlusButtonTo(element);
     };
-})();
+}).call(this);

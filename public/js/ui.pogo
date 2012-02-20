@@ -23,9 +23,10 @@ crc card markup = "
     </div>
 
     <div class='edit'>
-      <input type='text' data-field='title' value='' class='title-input'></input>
+      <input type='text' data-field='title' value='' class='title-input' placeholder='class name'></input>
 
       <div class='responsibilities'>
+        <h2>Responsibilities</h2>
         <input type='text' data-field='responsibility-0' value=''></input>
         <input type='text' data-field='responsibility-1' value=''></input>
         <input type='text' data-field='responsibility-2' value=''></input>
@@ -34,6 +35,7 @@ crc card markup = "
       </div>
 
       <div class='collaborators'>
+        <h2>Collaborators</h2>
         <select data-field='collaborator-0'><option></option></select>
         <select data-field='collaborator-1'><option></option></select>
         <select data-field='collaborator-2'><option></option></select>
@@ -98,8 +100,9 @@ make @element into crc card =
   @element
 
 make @pad selectable =
+  @pad: toggle class 'selected'
   @pad : click
-    $(this) : toggle class "selected"
+    // $(this) : toggle class "selected"
     false
 
 destroy @element if sure =

@@ -22,8 +22,6 @@ html, body {
   border-radius: 2px;
   padding: 10px;
   border: 1px solid #ccc;
-  width:360px;
-  height:200px;
   left: 90px;
   top: 90px;
   position: absolute;
@@ -88,14 +86,10 @@ html, body {
   border-color: #ccc;
 }
 
-.crc-card .responsibilities {
-  width: 48%;
-  float: left;
+.crc-card .responsibilities, .crc-card .collaborators {
+  display: inline-block;
 }
-.crc-card .collaborators {
-  width: 48%;
-  float: right;
-}
+
 .crc-card .collaborators select {
   display: block;
 }
