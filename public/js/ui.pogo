@@ -23,7 +23,7 @@ crc card markup = "
         <p data-field='collaborator-4'></p>
       </div>
       
-      <a href='/edit' class='edit-button'>edit</a>
+      <a href='#edit' class='edit-button'>edit</a>
     </div>
 
     <div class='edit'>
@@ -47,7 +47,7 @@ crc card markup = "
         <select data-field='collaborator-4'><option></option></select>
       </div>
       
-      <a href='/view' class='view-button'>done</a>
+      <a href='#view' class='view-button'>done</a>
     </div>
   </div>
   "
@@ -89,11 +89,12 @@ update @view when @fields change =
     update @field in @view to @value
     false
 
-ids = {}
-ids : counter = 0
-ids : next @oops =
-  :counter = :counter + 1
-  "card-" + :counter
+ids = {
+  counter = 0
+  next! =
+    :counter = :counter + 1
+    "card-@(:counter)"
+}
 
 make @element into crc card =
   id = @ids : next!
