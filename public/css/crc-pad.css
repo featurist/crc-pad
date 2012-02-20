@@ -24,8 +24,8 @@ html, body {
   border: 1px solid #ccc;
   width:360px;
   height:200px;
-  left: 30px;
-  top: 30px;
+  left: 90px;
+  top: 90px;
   position: absolute;
   min-width: 200px;
   min-height: 48px;
@@ -60,24 +60,14 @@ html, body {
 .plus {
   left: 10px;
   top: 10px;
-  font-size: 1.3em;
+  font-size: 4em;
+  padding: 5px;
+  background-color: #ddd;
+  color: #ffffff;
+  width: 70px;
+  border-radius: 5px;
+  text-align: center;
   text-decoration: none;
-  display: block;
-}
-
-.create-node {
-  padding: 10px;
-  border: 1px solid #ccc;
-  position: absolute;
-  top: 30px;
-  z-index: 999999999;
-  width: 150px;
-  background-color: #ffffff;
-}
-
-.menu-item {
-  padding: 10px;
-  padding-left: 0;
   display: block;
 }
 
