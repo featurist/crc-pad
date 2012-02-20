@@ -1,8 +1,0 @@
-CRC Pad
--------
-A tool to help design OO systems on ipads.
-
-You can hack on it like this:
-
-brew install watch
-watch -n1 pogo -c public/js/pad.pogo
