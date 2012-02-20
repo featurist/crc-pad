@@ -10,7 +10,7 @@ html, body {
   background-color: #efefef;
 }
 
-* {
+*, html, body, input, select {
   font-family: Sans-serif;
 }
 
@@ -22,8 +22,8 @@ html, body {
   border-radius: 2px;
   padding: 10px;
   border: 1px solid #aaa;
-  left: 90px;
-  top: 90px;
+  left: 100px;
+  top: 100px;
   position: absolute;
   height: 270px;
   background-color: #ffffff;
@@ -55,6 +55,7 @@ html, body {
 }
 
 .plus {
+  position: absolute;
   left: 10px;
   top: 10px;
   font-size: 4em;
@@ -113,11 +114,11 @@ html, body {
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 10px;
+  padding: 8px;
   background-color: #dddddd;
   color: #ffffff;
   border-radius: 5px;
-  width: 70px;
+  width: 50px;
   height: 20px;
   margin-bottom: 5px;
   margin-right: 5px;
@@ -137,8 +138,11 @@ html, body {
   font-weight: normal;
   border: 1px solid #ffffff;
   display: block;
-  height: 25px;
-  margin-bottom: 3px;
+  height: 30px;
+  margin-top: 7px;
+}
+.crc-card p {
+  border-width: 3px;
 }
 .crc-card input, .crc-card select {
   border-color: #ccc;

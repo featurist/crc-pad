@@ -11,7 +11,6 @@ crc card markup = "
         <p data-field='responsibility-1'></p>
         <p data-field='responsibility-2'></p>
         <p data-field='responsibility-3'></p>
-        <p data-field='responsibility-4'></p>
       </div>
 
       <div class='collaborators'>
@@ -20,7 +19,6 @@ crc card markup = "
         <p data-field='collaborator-1'></p>
         <p data-field='collaborator-2'></p>
         <p data-field='collaborator-3'></p>
-        <p data-field='collaborator-4'></p>
       </div>
       
       <a href='#edit' class='edit-button'>edit</a>
@@ -35,7 +33,6 @@ crc card markup = "
         <input type='text' data-field='responsibility-1' value=''></input>
         <input type='text' data-field='responsibility-2' value=''></input>
         <input type='text' data-field='responsibility-3' value=''></input>
-        <input type='text' data-field='responsibility-4' value=''></input>
       </div>
 
       <div class='collaborators'>
@@ -44,7 +41,6 @@ crc card markup = "
         <select data-field='collaborator-1'><option></option></select>
         <select data-field='collaborator-2'><option></option></select>
         <select data-field='collaborator-3'><option></option></select>
-        <select data-field='collaborator-4'><option></option></select>
       </div>
       
       <a href='#view' class='view-button'>done</a>
