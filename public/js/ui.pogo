@@ -29,18 +29,18 @@ crc card markup = "
 
       <div class='responsibilities'>
         <h2>Responsibilities</h2>
-        <input type='text' data-field='responsibility-0' value=''></input>
-        <input type='text' data-field='responsibility-1' value=''></input>
-        <input type='text' data-field='responsibility-2' value=''></input>
-        <input type='text' data-field='responsibility-3' value=''></input>
+        <input type='text' data-field='responsibility-0' value='' name='responsibility_0'></input>
+        <input type='text' data-field='responsibility-1' value='' name='responsibility_1'></input>
+        <input type='text' data-field='responsibility-2' value='' name='responsibility_2'></input>
+        <input type='text' data-field='responsibility-3' value='' name='responsibility_3'></input>
       </div>
 
       <div class='collaborators'>
         <h2>Collaborators</h2>
-        <select data-field='collaborator-0'><option></option></select>
-        <select data-field='collaborator-1'><option></option></select>
-        <select data-field='collaborator-2'><option></option></select>
-        <select data-field='collaborator-3'><option></option></select>
+        <select data-field='collaborator-0' name='responsibility_0'><option></option></select>
+        <select data-field='collaborator-1' name='responsibility_1'><option></option></select>
+        <select data-field='collaborator-2' name='responsibility_2'><option></option></select>
+        <select data-field='collaborator-3' name='responsibility_3'><option></option></select>
       </div>
       
       <a href='#view' class='view-button'>done</a>
@@ -77,7 +77,7 @@ update @view when @fields change =
     id = @view : attr "id"
     $ "option[value='@id']" : html @value
     update options with @id to @value
-    false
+    true
 
   @fields : filter "input" : keyup
     field = $(this) : data "field"
@@ -105,13 +105,28 @@ make @element into crc card =
   
   @element
 
+make @pad draggable =
+  options = {
+    disabled = false
+  }
+  @pad: draggable @options
+
+
+make @pad undraggable =
+  options = {
+    disabled = true
+  }
+  @pad: draggable @options
+
 make @pad selectable =
   pad: find '.edit-button': click
-    pad: add class 'selected'
+    make @pad undraggable
+    @pad: add class 'selected'
     false
   
   pad: find '.view-button': click
-    pad: remove class 'selected'
+    make @pad draggable
+    @pad: remove class 'selected'
     false
 
 destroy @element if sure =
@@ -129,11 +144,9 @@ make @pad destroyable =
 
 add a pad element to @element =
   pad = $(pad markup) : append to @element
-  activate @pad
-
-activate @pad =
   make @pad destroyable
-  @pad : draggable!
+  make @pad draggable
+  @pad
 
 add a plus button to @element =
   plus = $(plus markup) : append to @element

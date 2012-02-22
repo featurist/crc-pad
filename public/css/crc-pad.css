@@ -16,6 +16,10 @@ html, body {
 
 .container {
   position: relative;
+  display: block;
+  width: 2000px;
+  height: 2000px;
+  background: url(../images/bg.png);
 }
 
 .pad {
@@ -28,6 +32,7 @@ html, body {
   height: 270px;
   background-color: #ffffff;
   box-shadow: 7px 7px 2px #ddd;
+  width: 550px;
 }
 .pad.selected {
   border: 1px solid #333;
@@ -49,6 +54,11 @@ html, body {
   float: right;
   text-decoration: none;
   display: none;
+  font-size: 2em;
+  padding: 5px;
+  background-color: #ddd;
+  color: #ffffff;
+  border-radius: 5px;
 }
 .selected .destroy {
   display: block;
@@ -76,18 +86,18 @@ html, body {
   margin: 0;
   font-size: 1.4em;
   font-weight: bold;
-  border: 1px solid #ffffff;
   display: block;
   height: 44px;
   line-height: 44px;
   color: #333;
   margin-bottom: 10px;
+  z-index: 999999999999;
 }
 .crc-card select, .crc-card input, .crc-card h2 {
   width: 260px;
 }
 .crc-card .title-input {
-  width: 300px;
+  width: 480px;
 }
 
 .crc-card h2 {
@@ -95,7 +105,7 @@ html, body {
   padding: 0;
   font-size: 1em;
   font-weight: normal;
-  color: #cccccc;
+  color: #bbbbbb;
 }
 
 .crc-card .title-input {
@@ -136,7 +146,6 @@ html, body {
   margin: 0;
   font-size: 1em;
   font-weight: normal;
-  border: 1px solid #ffffff;
   display: block;
   height: 30px;
   margin-top: 7px;
