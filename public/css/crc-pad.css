@@ -17,7 +17,7 @@ html, body {
 .container {
   position: relative;
   display: block;
-  width: 2000px;
+  width: 1500px;
   height: 2000px;
   background: url(../images/bg.png);
 }
