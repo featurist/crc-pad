@@ -11,7 +11,7 @@ html, body {
 }
 
 *, html, body, input, select {
-  font-family: Sans-serif;
+  font-family: 'Handlee', sans-serif;
 }
 
 .container {
@@ -29,7 +29,7 @@ html, body {
   left: 100px;
   top: 100px;
   position: absolute;
-  height: 270px;
+  height: 280px;
   background-color: #ffffff;
   box-shadow: 7px 7px 2px #ddd;
   width: 550px;
@@ -84,7 +84,7 @@ html, body {
 .crc-card h1, .crc-card .title-input {
   padding: 0;
   margin: 0;
-  font-size: 1.4em;
+  font-size: 1.6em;
   font-weight: bold;
   display: block;
   height: 44px;
@@ -103,13 +103,10 @@ html, body {
 .crc-card h2 {
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: normal;
-  color: #bbbbbb;
-}
-
-.crc-card .title-input {
-  border-color: #ccc;
+  color: #aaaaaa;
+  padding-bottom: 5px;
 }
 
 .responsibilities, .collaborators {
@@ -137,26 +134,25 @@ html, body {
   font-size: 1.5em;
 }
 
+.crc-card .collaborators, .crc-card .responsibilities {
+  margin-top: 10px;
+}
+
 .crc-card .collaborators select {
   display: block;
 }
 
 .crc-card p, .crc-card input, .crc-card select {
-  padding: 0;
+  padding: 2px;
   margin: 0;
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: normal;
   display: block;
   height: 30px;
   margin-top: 7px;
 }
 .crc-card p {
-  border-width: 3px;
 }
-.crc-card input, .crc-card select {
-  border-color: #ccc;
-}
-
 
 .ui-resizable {
   position: relative;
