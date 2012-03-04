@@ -132,7 +132,7 @@ make (pad) selectable =
 destroy (element) if sure =
   sure = confirm "Are you sure?"
   if (sure)
-    id = element : id
+    id = element : attr ('id')
     $ "option[value='@id']" : remove!
     element : remove!
 

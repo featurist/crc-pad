@@ -96,7 +96,7 @@
         sure = confirm("Are you sure?");
         if (sure) {
             var id;
-            id = element.id;
+            id = element.attr("id");
             $("option[value='" + id + "']").remove();
             return element.remove();
         }
