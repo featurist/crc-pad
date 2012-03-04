@@ -51,38 +51,38 @@ crc card markup = "
 pad markup = "<div class='pad'><a class='destroy' href='#destroy'>X</a></div>"
 plus markup = "<a class='plus' href='#plus'>+</a>"
 
-update @field in @view to @value =
-  @view : find ".show [data-field='@field']" : html @value
+update (field) in (view) to (value) =
+  view : find ".show [data-field='@field']" : html (value)
 
-update options with @id to @value =
+update options with (id) to (value) =
   $ "option[value='@id']:selected" : each
     pad = $(this) : parents ".pad" : first!
     field = $(this) : parents "select" : data "field"
-    update @field in @pad to @value
+    update (field) in (pad) to (value)
     true
 
-update @view when @fields change =
+update (view) when (fields) change =
 
-  @fields : filter "select" : change
+  fields : filter "select" : change
     field = $(this) : data "field"
     value = $(this) : find "option:selected" : text!
-    update @field in @view to @value
+    update (field) in (view) to (value)
     false
 
-  @fields : filter ".title-input" : keyup
+  fields : filter ".title-input" : keyup
     select = $(this)
-    field = @select : data "field"
-    value = @select : val!
-    update @field in @view to @value
-    id = @view : attr "id"
-    $ "option[value='@id']" : html @value
-    update options with @id to @value
+    field = select : data "field"
+    value = select : val!
+    update (field) in (view) to (value)
+    id = view : attr "id"
+    $ "option[value='@id']" : html (value)
+    update options with (id) to (value)
     true
 
-  @fields : filter "input" : keyup
+  fields : filter "input" : keyup
     field = $(this) : data "field"
     value = $(this) : val!
-    update @field in @view to @value
+    update (field) in (view) to (value)
     false
 
 ids = {
@@ -92,69 +92,69 @@ ids = {
     "card-@(:counter)"
 }
 
-make @element into crc card =
-  id = @ids : next!
-  @element : attr "id" @id
-  $(crc card markup) : append to @element
-  fields = @element : find "input, select"
-  update @element when @fields change
-  @fields : filter "select" : html ($ "select:first" : html!)
+make (element) into crc card =
+  id = ids : next!
+  element : attr "id" (id)
+  $(crc card markup) : append to (element)
+  fields = element : find "input, select"
+  update (element) when (fields) change
+  fields : filter "select" : html ($ "select:first" : html!)
   $ "select" : append "<option value='@id'></option>"
   
-  make @element selectable
+  make (element) selectable
   
-  @element
+  element
 
-make @pad draggable =
+make (pad) draggable =
   options = {
     disabled = false
   }
-  @pad: draggable @options
+  pad: draggable (options)
 
 
-make @pad undraggable =
+make (pad) undraggable =
   options = {
     disabled = true
   }
-  @pad: draggable @options
+  pad: draggable (options)
 
-make @pad selectable =
+make (pad) selectable =
   pad: find '.edit-button': click
-    make @pad undraggable
-    @pad: add class 'selected'
+    make (pad) undraggable
+    pad: add class 'selected'
     false
   
   pad: find '.view-button': click
-    make @pad draggable
-    @pad: remove class 'selected'
+    make (pad) draggable
+    pad: remove class 'selected'
     false
 
-destroy @element if sure =
-  sure = @confirm "Are you sure?"
-  if (@sure)
+destroy (element) if sure =
+  sure = confirm "Are you sure?"
+  if (sure)
     id = element : id
     $ "option[value='@id']" : remove!
-    @element : remove!
+    element : remove!
 
-make @pad destroyable =
-  @pad : find ".destroy" : click
-    destroy @pad if sure
+make (pad) destroyable =
+  pad : find ".destroy" : click
+    destroy (pad) if sure
     
     false
 
-add a pad element to @element =
-  pad = $(pad markup) : append to @element
-  make @pad destroyable
-  make @pad draggable
-  @pad
+add a pad element to (element) =
+  pad = $(pad markup) : append to (element)
+  make (pad) destroyable
+  make (pad) draggable
+  pad
 
-add a plus button to @element =
-  plus = $(plus markup) : append to @element
-  @plus : click
-    pad = add a pad element to @element
-    make @pad into crc card
+add a plus button to (element) =
+  plus = $(plus markup) : append to (element)
+  plus : click
+    pad = add a pad element to (element)
+    make (pad) into crc card
     
     false
 
-exports:turn @element into pad =
-  add a plus button to @element
+exports:turn (element) into pad =
+  add a plus button to (element)
